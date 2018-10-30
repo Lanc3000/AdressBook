@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane alignment="CENTER" hgap="10.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.controllers.MainController">
+  <children>
+    <VBox prefHeight="333.0" prefWidth="567.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+      <children>
+        <HBox prefHeight="50.0" prefWidth="150.0">
+          <children>
+            <Button id="addButton" fx:id="btnAdd" mnemonicParsing="false" onAction="#showDialog" text="Добавить">
+              <HBox.margin>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" fx:id="x1" />
+              </HBox.margin>
+            </Button>
+            <Button id="addButtonChange" fx:id="btnChange" mnemonicParsing="false" onAction="#showChange" text="Изменить">
+              <HBox.margin>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" fx:id="x1" />
+              </HBox.margin>
+            </Button>
+            <Button id="addButtonDelete" fx:id="btnDelete" mnemonicParsing="false" onAction="#showDelete" text="Удалить" HBox.margin="$x1" />
+          </children>
+          <effect>
+            <DropShadow />
+          </effect>
+        </HBox>
+        <AnchorPane prefHeight="100.0" prefWidth="100.0">
+          <children>
+            <Button fx:id="btnSearch" layoutY="18.0" mnemonicParsing="false" text="Поиск" AnchorPane.rightAnchor="20.0" />
+            <TextField fx:id="txtSearch" layoutY="17.0" prefWidth="256.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="138.0" />
+          </children>
+          <padding>
+            <Insets />
+          </padding>
+        </AnchorPane>
+        <AnchorPane prefHeight="30.0" prefWidth="30.0">
+          <children>
+            <TableView fx:id="tableAddressBook" disable="false" editable="false" layoutY="-55.0" prefHeight="122.0" prefWidth="469.0" tableMenuButtonVisible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <columns>
+                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="221.0" resizable="true" text="ФИО" fx:id="columnFIO" />
+                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="305.0" text="Телефон" fx:id="columnPhone" />
+              </columns>
+              <effect>
+                <DropShadow />
+              </effect>
+            </TableView>
+          </children>
+          <VBox.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" fx:id="x1" />
+          </VBox.margin>
+        </AnchorPane>
+        <AnchorPane prefHeight="48.0" prefWidth="567.0" />
+        <Label fx:id="labelCount" prefWidth="151.0" text="Количество записей:">
+          <VBox.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" fx:id="x1" />
+          </VBox.margin>
+        </Label>
+      </children>
+    </VBox>
+  </children>
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+</GridPane>

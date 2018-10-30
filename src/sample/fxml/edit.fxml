@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="440.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller = "sample.controllers.Controller">
+  <children>
+    <BorderPane layoutX="0.0" layoutY="-1.0" prefHeight="120.0" prefWidth="440.0">
+      <center>
+        <VBox minWidth="200.0" prefHeight="200.0" prefWidth="200.0">
+          <children>
+            <TextField fx:id="txtFIO" prefWidth="200.0">
+              <VBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" fx:id="x1" />
+              </VBox.margin>
+            </TextField>
+            <TextField fx:id="txtPhone" prefWidth="200.0" VBox.margin="$x1" />
+          </children>
+          <BorderPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" fx:id="x2" />
+          </BorderPane.margin>
+        </VBox>
+      </center>
+      <left>
+        <VBox alignment="TOP_LEFT" prefHeight="200.0" prefWidth="100.0" BorderPane.margin="$x2">
+          <children>
+            <Label text="Имя" VBox.margin="$x1" />
+            <Label text="Телефон" VBox.margin="$x1" />
+          </children>
+        </VBox>
+      </left>
+      <right>
+        <VBox prefHeight="200.0" prefWidth="120.0" BorderPane.margin="$x2">
+          <children>
+            <Button fx:id="btnOK" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" text="ОК">
+              <VBox.margin>
+                <Insets bottom="5.0" left="25.0" right="5.0" top="15.0" fx:id="x3" />
+              </VBox.margin>
+            </Button>
+            <Button fx:id="btnCancel" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" text="Отмена" VBox.margin="$x3" />
+          </children>
+        </VBox>
+      </right>
+    </BorderPane>
+  </children>
+</AnchorPane>
