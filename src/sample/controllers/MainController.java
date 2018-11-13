@@ -37,8 +37,7 @@ public class MainController {
     private TableColumn<Person, String> columnFIO;
     @FXML
     private TableColumn<Person, String> columnPhone;
-    @FXML
-    private Label LabelCount;
+
     @FXML
     private void initialize(){
         columnFIO.setCellValueFactory(new PropertyValueFactory<Person, String>("fio"));
@@ -49,7 +48,7 @@ public class MainController {
     }
 
     private void updateCountLabel(){
-        LabelCount.setText("Количество записей: " + adressBookImpl.getPersonList().size());
+        labelCount.setText("Количество записей: " + adressBookImpl.getPersonList().size());
     }
 
 
