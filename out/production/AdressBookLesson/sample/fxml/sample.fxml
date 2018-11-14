@@ -21,12 +21,12 @@
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" fx:id="x1" />
               </HBox.margin>
             </Button>
-            <Button id="addButtonChange" fx:id="btnChange" mnemonicParsing="false" onAction="#showChange" text="Изменить">
+            <Button id="addButtonChange" fx:id="btnChange" mnemonicParsing="false" onAction="#showDialog" text="Изменить">
               <HBox.margin>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" fx:id="x1" />
               </HBox.margin>
             </Button>
-            <Button id="addButtonDelete" fx:id="btnDelete" mnemonicParsing="false" onAction="#showDelete" text="Удалить" HBox.margin="$x1" />
+            <Button id="addButtonDelete" fx:id="btnDelete" mnemonicParsing="false" onAction="#showDialog" text="Удалить" HBox.margin="$x1" />
           </children>
           <effect>
             <DropShadow />
@@ -41,9 +41,9 @@
             <Insets />
           </padding>
         </AnchorPane>
-        <AnchorPane prefHeight="30.0" prefWidth="30.0">
+        <AnchorPane prefHeight="30.0" prefWidth="357.0">
           <children>
-            <TableView fx:id="tableAdressBook" disable="false" editable="false" layoutY="-55.0" prefHeight="122.0" prefWidth="469.0" tableMenuButtonVisible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <TableView fx:id="tableAdressBook" disable="false" editable="false" layoutY="-55.0" prefHeight="150.0" prefWidth="357.0" tableMenuButtonVisible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
               <columns>
                 <TableColumn maxWidth="5000.0" minWidth="1.0" prefWidth="259.0" resizable="true" text="ФИО" fx:id="columnFIO" />
                 <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="317.0" text="Телефон" fx:id="columnPhone" />

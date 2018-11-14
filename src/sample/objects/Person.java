@@ -1,27 +1,47 @@
 package sample.objects;
 
+import javafx.beans.property.SimpleStringProperty;
+
 public class Person {
-    private String fio;
-    private String phone;
+    private SimpleStringProperty fio = new SimpleStringProperty("");
+    private SimpleStringProperty phone = new SimpleStringProperty(""); //проиницилизируем пустым значением чтобы в TableView не было ошибок
+
+    public Person(){}
+
     public Person(String name, String phone){
-        this.phone = phone;
-        fio = name;
+        this.phone = new SimpleStringProperty(phone);
+        this.fio = new SimpleStringProperty(name);
     }
 
 
     public String getFio() {
-        return fio;
+        return fio.get();
     }
 
     public void setFio(String fio) {
-        this.fio = fio;
+        this.fio.set(fio);
     }
 
     public String getPhone() {
-        return phone;
+        return phone.get();
     }
 
     public void setPhone(String phone) {
-        this.phone = phone;
+        this.phone .set(phone);
+    }
+
+    public SimpleStringProperty fioProperty(){
+        return fio;
+    }
+    public SimpleStringProperty phoneProperty(){
+        return phone;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "fio='" + fio + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
     }
 }
