@@ -26,10 +26,11 @@ public class Controller {
         Stage stage = (Stage) source.getScene().getWindow();
         stage.hide();
     }
+    public Person getPerson(){return person;}
 
     public void setPerson(Person person){
+        if(person == null){return;}
         this.person = person;
-
         txtFIO.setText(person.getFio());
         txtPhone.setText(person.getPhone());
     }

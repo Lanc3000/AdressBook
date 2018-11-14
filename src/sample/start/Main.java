@@ -5,27 +5,40 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sample.controllers.MainController;
 import sample.interfaces.impls.CollectionAdressBook;
 import sample.objects.Person;
+
+import java.io.IOException;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("../fxml/sample.fxml"));
-        primaryStage.setTitle("Hello World");
+    try{
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("../fxml/sample.fxml"));
+        Parent fxmlMain = fxmlLoader.load();
+        MainController mainController = fxmlLoader.getController();
+        mainController.setMainStage(primaryStage);
+
+        primaryStage.setTitle("Адресная книга");
         primaryStage.setMinHeight(600);
         primaryStage.setMinWidth(400);
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(fxmlMain, 300, 275));
         primaryStage.show();
-        testData();
+    }
+    catch(IOException e ){
+    e.printStackTrace();
+        }
 
+        testData();
 
     }
 
     private void testData(){
-        CollectionAdressBook  adressBook = new CollectionAdressBook();
-        adressBook.fillTestData();
+        //CollectionAdressBook  adressBook = new CollectionAdressBook();
+        //adressBook.fillTestData();
     }
 
 
