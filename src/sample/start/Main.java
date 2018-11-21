@@ -10,27 +10,28 @@ import sample.interfaces.impls.CollectionAdressBook;
 import sample.objects.Person;
 
 import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-    try{
+
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("../fxml/sample.fxml"));
+        fxmlLoader.setResources(ResourceBundle.getBundle("sample.bundlies.Locale", new Locale("en")));
+
         Parent fxmlMain = fxmlLoader.load();
         MainController mainController = fxmlLoader.getController();
         mainController.setMainStage(primaryStage);
 
-        primaryStage.setTitle("Адресная книга");
+        primaryStage.setTitle(fxmlLoader.getResources().getString("adress_book"));
         primaryStage.setMinHeight(600);
         primaryStage.setMinWidth(400);
         primaryStage.setScene(new Scene(fxmlMain, 300, 275));
         primaryStage.show();
-    }
-    catch(IOException e ){
-    e.printStackTrace();
-        }
+
 
         testData();
 

@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,8 +19,10 @@ import sample.interfaces.impls.CollectionAdressBook;
 import sample.objects.Person;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class MainController {
+public class MainController implements Initializable {
 
     private CollectionAdressBook adressBookImpl = new CollectionAdressBook();
     private Stage mainStage;
@@ -51,15 +54,7 @@ public class MainController {
 
     private Stage editDialogStage;
 
-    @FXML
-    private void initialize(){
 
-        columnFIO.setCellValueFactory(new PropertyValueFactory<Person, String>("fio"));
-        columnPhone.setCellValueFactory(new PropertyValueFactory<Person, String>("phone"));
-        initListener();
-        fillData();
-        initLoader();
-    }
 
     private void fillData() {
         adressBookImpl.fillTestData();
@@ -97,7 +92,7 @@ public class MainController {
     }
 
     private void updateCountLabel(){
-        labelCount.setText("Количество записей: " + adressBookImpl.getPersonList().size());
+        labelCount.setText(resourceBundle.getString("count") + ": " + adressBookImpl.getPersonList().size());
     }
 
 
@@ -162,5 +157,16 @@ public class MainController {
             editDialogStage.initOwner(mainStage);
             editDialogStage.showAndWait();//для ожидания закрытия окна
         }
+    }
+    private ResourceBundle resourceBundle;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        this.resourceBundle = resources;
+        columnFIO.setCellValueFactory(new PropertyValueFactory<Person, String>("fio"));
+        columnPhone.setCellValueFactory(new PropertyValueFactory<Person, String>("phone"));
+        initListener();
+        fillData();
+        initLoader();
     }
 }
